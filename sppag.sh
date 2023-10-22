@@ -39,8 +39,10 @@ while : ; do
     adb -t $etid pull $apk ${app}.apk
     
     echo "Installing on mobile"
+    # TODO: try t install without -r, if errors, offer to use -r (maybe also add an option to use -r by default?)
     adb -t $mtid install -r ${app}.apk
-
+    
+    # TODO: offer to uninstall from the emulator?
 done
 
 # TODO: add cleaning trap
